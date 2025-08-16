@@ -5,7 +5,8 @@ export default defineConfig({
   theme: {
     colors: {
       'main-bg': 'var(--main-bg)',
-      'main-content': 'var(--main-content)'
+      'main-content': 'var(--main-content)',
+      'primary': 'var(--primary)'
     }
   }
 })
