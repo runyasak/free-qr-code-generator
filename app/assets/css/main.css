@@ -1,0 +1,13 @@
+:root {
+  font-family: Kanit, sans-serif;
+  --main-bg: #1b1b1f;
+  --main-content: #dfdfd6;
+}
+
+html {
+  background-color: var(--main-bg);
+}
+
+html.dark {
+  color-scheme: dark;
+}
