@@ -72,6 +72,14 @@ useHead({
 </script>
 
 <template>
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-WWSQN9Z3"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
   <a
     class="text-[#98989f]"
     href="https://github.com/runyasak/free-qr-code-generator"
