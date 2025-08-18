@@ -14,10 +14,10 @@ onMounted(() => {
     type: 'svg',
     data: exampleData,
     dotsOptions: {
-      type: 'rounded',
+      type: 'extra-rounded',
     },
     cornersSquareOptions: {
-      type: 'rounded',
+      type: 'extra-rounded',
     },
   })
 
