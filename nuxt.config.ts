@@ -20,6 +20,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'th'
+      },
       title: 'สร้าง QR Code ฟรี - เครื่องมือสร้าง QR Code ออนไลน์',
       meta: [
         { charset: 'utf-8' },
