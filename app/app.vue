@@ -52,7 +52,7 @@ useHead({
         '@type': 'WebApplication',
         'name': 'สร้าง QR Code ฟรี',
         'description': 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที',
-        'url': 'https://yourdomain.com',
+        'url': 'https://free-qr-code-generator.nuxt.dev',
         'applicationCategory': 'UtilityApplication',
         'operatingSystem': 'Web Browser',
         'offers': {

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts'],
+  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts', '@nuxthub/core'],
   css: ['~/assets/css/reset.css', '~/assets/css/main.css'],
   eslint: {
     config: {
@@ -36,8 +36,7 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'สร้าง QR Code ฟรี - เครื่องมือสร้าง QR Code ออนไลน์' },
         { property: 'og:description', content: 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รองรับภาษาไทย' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://yourdomain.com' }, // Replace with your actual domain
-        { property: 'og:image', content: 'https://yourdomain.com/og-image.jpg' }, // Create a Thai-focused OG image
+        { property: 'og:url', content: 'https://free-qr-code-generator.nuxt.dev' },
         { property: 'og:locale', content: 'th_TH' },
         { property: 'og:site_name', content: 'สร้าง QR Code ฟรี' },
         
@@ -45,7 +44,6 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'สร้าง QR Code ฟรี - เครื่องมือสร้าง QR Code ออนไลน์' },
         { name: 'twitter:description', content: 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รองรับภาษาไทย' },
-        { name: 'twitter:image', content: 'https://yourdomain.com/twitter-image.jpg' },
         
         // Additional SEO tags
         { name: 'theme-color', content: '#000000' },
@@ -55,9 +53,8 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://yourdomain.com' }, // Replace with your actual domain
-        { rel: 'alternate', hreflang: 'th', href: 'https://yourdomain.com' },
-        { rel: 'alternate', hreflang: 'en', href: 'https://yourdomain.com/en' } // If you plan to add English version
+        { rel: 'canonical', href: 'https://free-qr-code-generator.nuxt.dev' }, // Replace with your actual domain
+        { rel: 'alternate', hreflang: 'th', href: 'https://free-qr-code-generator.nuxt.dev' },
       ]
     }
   }
