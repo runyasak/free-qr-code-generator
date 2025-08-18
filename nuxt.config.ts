@@ -20,11 +20,44 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'FREE QR Code Generator',
+      title: 'สร้าง QR Code ฟรี - เครื่องมือสร้าง QR Code ออนไลน์',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Generate QR codes instantly with a clean, brutalistic interface' }
+        { name: 'description', content: 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รองรับภาษาไทย' },
+        { name: 'keywords', content: 'QR Code, สร้าง QR Code, QR Code ฟรี, เครื่องมือสร้าง QR Code, QR Code ออนไลน์, สร้าง QR Code สำหรับเว็บไซต์, QR Code ภาษาไทย' },
+        { name: 'author', content: 'Free QR Code Generator' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'language', content: 'th' },
+        { name: 'geo.region', content: 'TH' },
+        { name: 'geo.placename', content: 'Thailand' },
+        
+        // Open Graph tags for social media sharing
+        { property: 'og:title', content: 'สร้าง QR Code ฟรี - เครื่องมือสร้าง QR Code ออนไลน์' },
+        { property: 'og:description', content: 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รองรับภาษาไทย' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://yourdomain.com' }, // Replace with your actual domain
+        { property: 'og:image', content: 'https://yourdomain.com/og-image.jpg' }, // Create a Thai-focused OG image
+        { property: 'og:locale', content: 'th_TH' },
+        { property: 'og:site_name', content: 'สร้าง QR Code ฟรี' },
+        
+        // Twitter Card tags
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'สร้าง QR Code ฟรี - เครื่องมือสร้าง QR Code ออนไลน์' },
+        { name: 'twitter:description', content: 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รองรับภาษาไทย' },
+        { name: 'twitter:image', content: 'https://yourdomain.com/twitter-image.jpg' },
+        
+        // Additional SEO tags
+        { name: 'theme-color', content: '#000000' },
+        { name: 'msapplication-TileColor', content: '#000000' },
+        { name: 'apple-mobile-web-app-title', content: 'สร้าง QR Code ฟรี' },
+        { name: 'application-name', content: 'สร้าง QR Code ฟรี' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'canonical', href: 'https://yourdomain.com' }, // Replace with your actual domain
+        { rel: 'alternate', hreflang: 'th', href: 'https://yourdomain.com' },
+        { rel: 'alternate', hreflang: 'en', href: 'https://yourdomain.com/en' } // If you plan to add English version
       ]
     }
   }

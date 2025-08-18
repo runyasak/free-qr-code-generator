@@ -42,6 +42,33 @@ function downloadQRCode() {
     name: 'qr-code',
   })
 }
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        'name': 'สร้าง QR Code ฟรี',
+        'description': 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที',
+        'url': 'https://yourdomain.com',
+        'applicationCategory': 'UtilityApplication',
+        'operatingSystem': 'Web Browser',
+        'offers': {
+          '@type': 'Offer',
+          'price': '0',
+          'priceCurrency': 'THB',
+        },
+        'inLanguage': 'th',
+        'author': {
+          '@type': 'Organization',
+          'name': 'Free QR Code Generator',
+        },
+      }),
+    },
+  ],
+})
 </script>
 
 <template>
