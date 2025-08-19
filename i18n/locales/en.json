@@ -1,0 +1,11 @@
+{
+  "title": "Free QR Code Generator",
+  "subtitle": "Online QR Code Creation Tool",
+  "description": "Enter URL or text you want to encode",
+  "placeholder": "https://example.com",
+  "downloadButton": "Download QR Code",
+  "seo": {
+    "title": "Free QR Code Generator - Online QR Code Creation Tool",
+    "description": "Generate QR codes for free online. Create QR codes for websites, links, or text instantly. No installation required. Easy to use with Thai language support."
+  }
+}

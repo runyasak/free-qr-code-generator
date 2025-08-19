@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts', '@nuxthub/core', 'nuxt-gtag'],
+  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts', '@nuxthub/core', 'nuxt-gtag', '@nuxtjs/i18n'],
   css: ['~/assets/css/reset.css', '~/assets/css/main.css'],
   eslint: {
     config: {
@@ -17,6 +17,31 @@ export default defineNuxtConfig({
     families: [
       { name: 'Kanit', provider: 'google' }
     ]
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'th',
+        iso: 'th-TH',
+        name: 'ไทย',
+        file: 'th.json'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    defaultLocale: 'th',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: true,
+      fallbackLocale: 'th'
+    },
   },
   app: {
     head: {
