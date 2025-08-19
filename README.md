@@ -1,75 +1,19 @@
-# Nuxt Minimal Starter
+# FREE QR Code Generator
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A QR code generator static web application built with Nuxt 4. This project showcases the power of Nuxt 4, UnoCSS, and performance-focused development practices.
 
-## Setup
+[https://free-qr-code-generator.nuxt.dev/](https://free-qr-code-generator.nuxt.dev/)
 
-Make sure to install dependencies:
+## Screenshots
+
+<img width="1552" height="987" alt="image" src="https://github.com/user-attachments/assets/71f6c58e-fa6a-4f33-8b6d-bf5186f4f01c" />
+
+## 🛠️ Development
 
 ```bash
-# npm
-npm install
-
-# pnpm
+# Install dependencies
 pnpm install
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+# Start development server
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
