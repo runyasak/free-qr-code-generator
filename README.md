@@ -28,6 +28,6 @@ If you love our project and want to help make it even better, we always welcome 
 
 ## Thank You!
 
-Every contribution, no matter how small, helps make this project better for everyone. We appreciate your time and effort! ��
+Every contribution, no matter how small, helps make this project better for everyone. We appreciate your time and effort!
 
 Happy coding! 🚀
