@@ -7,8 +7,18 @@
 
 html {
   background-color: var(--main-bg);
+  color: var(--main-content);
 }
 
 html.dark {
   color-scheme: dark;
+  --main-bg: #f5f5f5;
+  --main-content: #232323;
+  --primary: #00DC82;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--main-content);
+  transition: background 0.2s, color 0.2s;
 }
