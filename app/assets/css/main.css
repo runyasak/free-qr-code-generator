@@ -1,14 +1,92 @@
 :root {
-  font-family: Kanit, sans-serif;
-  --main-bg: #1b1b1f;
-  --main-content: #dfdfd6;
-  --primary: #00DC82;
+  font-family: 'Inter', 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --main-bg: #0f172a;
+  --main-content: #f8fafc;
+  --primary: #10b981;
 }
 
 html {
   background-color: var(--main-bg);
+  color: var(--main-content);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-feature-settings: "rlig" 1, "calt" 1;
 }
 
+/* Light mode (when dark class is applied) */
 html.dark {
-  color-scheme: dark;
+  color-scheme: light;
+  --main-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --main-content: #ffffff;
+  --primary: #10b981;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Light mode background overlay */
+html.dark::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.1) 0%, 
+    rgba(118, 75, 162, 0.1) 100%),
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--main-content);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fraunces font for titles */
+.title-font {
+  font-family: 'Fraunces', 'Inter', serif;
+  font-variation-settings: 'SOFT' 0, 'WONK' 0;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.6);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.4);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.6);
+}
+
+/* Backdrop blur support for older browsers */
+@supports not (backdrop-filter: blur(12px)) {
+  .backdrop-blur-xl {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  html.dark .backdrop-blur-xl {
+    background-color: rgba(15, 23, 42, 0.9);
+  }
 }
