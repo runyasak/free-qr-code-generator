@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import QRCodeStyling from 'qr-code-styling'
+
 const { t, locale } = useI18n()
 const qrData = ref('')
 const qrCode = ref<QRCodeStyling | null>(null)
 const exampleData = 'https://example.com'
 
-
 // Light/Dark mode state
 const isDark = ref(false)
+
 if (process.client) {
   // On mount, check system preference or localStorage
   isDark.value = localStorage.getItem('theme') === 'dark' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -19,6 +20,7 @@ function toggleDark() {
   localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
   updateHtmlClass()
 }
+
 function updateHtmlClass() {
   if (isDark.value)
     document.documentElement.classList.add('dark')
@@ -160,7 +162,6 @@ useHead({
   </header>
 
   <!-- Main content -->
-    <!-- Main content -->
   <main class="relative z-10 min-h-screen pt-20 pb-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <!-- Compact Hero section -->

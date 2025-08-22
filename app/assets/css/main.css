@@ -2,9 +2,7 @@
   font-family: 'Inter', 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --main-bg: #0f172a;
   --main-content: #f8fafc;
-  --main-content-secondary: #cbd5e1;
   --primary: #10b981;
-  --primary-dark: #059669;
 }
 
 html {
@@ -19,9 +17,7 @@ html.dark {
   color-scheme: light;
   --main-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --main-content: #ffffff;
-  --main-content-secondary: #e2e8f0;
   --primary: #10b981;
-  --primary-dark: #059669;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
@@ -55,19 +51,6 @@ body {
 .title-font {
   font-family: 'Fraunces', 'Inter', serif;
   font-variation-settings: 'SOFT' 0, 'WONK' 0;
-}
-
-/* Utility classes for text color */
-.text-main-content {
-  color: var(--main-content);
-}
-.text-main-content-secondary {
-  color: var(--main-content-secondary);
-}
-
-/* Smooth transitions for all interactive elements */
-.my-transition {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -106,21 +89,4 @@ html.dark ::-webkit-scrollbar-thumb:hover {
   html.dark .backdrop-blur-xl {
     background-color: rgba(15, 23, 42, 0.9);
   }
-}
-
-/* Enhanced focus styles */
-.focus-visible\:ring-4:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
-}
-
-/* Animation for feature cards */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}
-
-.group:hover .group-hover\:animate-float {
-  animation: float 2s ease-in-out infinite;
 }
