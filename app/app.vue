@@ -99,7 +99,7 @@ useHead({
 <template>
   <div class="absolute top-4 right-4 flex items-center gap-2 z-10">
     <a
-      class="text-[#98989f] hover:text-[#dfdfd6] my-transition"
+      class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 my-transition"
       href="https://github.com/runyasak/free-qr-code-generator"
       target="_blank"
       rel="noopener noreferrer"
@@ -138,7 +138,7 @@ useHead({
   >
     <div
       text-center
-      text-white
+      class="text-main-content"
       text-5xl
     >
       {{ $t('title') }}
@@ -161,16 +161,7 @@ useHead({
 
     <input
       v-model="qrData"
-      p-2
-      bg="#161618"
-      border="gray-500/50"
-      border-solid
-      hover:border-primary
-      focus:border-primary
-      my-transition
-      focus-visible:outline-none
-      rounded
-      color-white
+      class="p-2 border border-solid rounded focus-visible:outline-none my-transition bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 hover:border-primary focus:border-primary placeholder-gray-500 dark:placeholder-gray-400"
       type="text"
       :placeholder="$t('placeholder')"
     >
@@ -183,15 +174,7 @@ useHead({
     />
 
     <button
-      bg-primary
-      px-6
-      py-4
-      rounded
-      border-0
-      uppercase
-      font-bold
-      my-transition
-      :class="qrData ? 'cursor-pointer' : 'cursor-not-allowed !bg-gray-500/50'"
+      class="bg-primary hover:bg-primary/90 px-6 py-4 rounded border-0 uppercase font-bold my-transition text-white disabled:cursor-not-allowed disabled:bg-gray-400 disabled:opacity-50"
       :disabled="!qrData"
       @click="downloadQRCode"
     >

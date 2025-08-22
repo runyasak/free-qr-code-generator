@@ -1,24 +1,41 @@
 :root {
   font-family: Kanit, sans-serif;
   --main-bg: #1b1b1f;
-  --main-content: #dfdfd6;
+  --main-content: #f5f5f5; /* Light text for dark bg */
+  --main-content-secondary: #bdbdbd;
   --primary: #00DC82;
 }
 
 html {
   background-color: var(--main-bg);
   color: var(--main-content);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Light mode (when dark class is applied) */
 html.dark {
-  color-scheme: dark;
-  --main-bg: #f5f5f5;
-  --main-content: #232323;
-  --primary: #00DC82;
+  color-scheme: light;
+  --main-bg: #ffffff;
+  --main-content: #1a1a1a; /* Dark text for light bg */
+  --main-content-secondary: #666666;
+  --primary: #00B469;
 }
 
 body {
   background: var(--main-bg);
   color: var(--main-content);
-  transition: background 0.2s, color 0.2s;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Utility classes for text color */
+.text-main-content {
+  color: var(--main-content);
+}
+.text-main-content-secondary {
+  color: var(--main-content-secondary);
+}
+
+/* Smooth transitions for all interactive elements */
+.my-transition {
+  transition: all 0.2s ease-in-out;
 }
