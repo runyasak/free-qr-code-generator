@@ -115,44 +115,49 @@ useHead({
     gap-8
     justify-center
   >
-    <div
-      text-center
-      text-white
-      text-5xl
-    >
-      {{ $t('title') }}
+    <div class="text-center flex flex-col gap-2">
+      <div
+        text-white
+        text-5xl
+      >
+        {{ $t('title') }}
+      </div>
+
+      <p
+        text-main-content
+        uppercase
+        text-xl
+      >
+        {{ $t('subtitle') }}
+      </p>
+    </div>
+    
+
+    <div class="flex flex-col gap-2">
+      <p
+        text-main-content
+        text-xl
+      >
+        {{ $t('description') }}
+      </p>
+      <input
+        v-model="qrData"
+        p-2
+        bg="#161618"
+        border="gray-500/50"
+        border-solid
+        hover:border-primary
+        focus:border-primary
+        my-transition
+        focus-visible:outline-none
+        rounded-md
+        color-white
+        text-xl
+        type="text"
+        :placeholder="$t('placeholder')"
+      >
     </div>
 
-    <p
-      text-main-content
-      text-center
-      uppercase
-    >
-      {{ $t('subtitle') }}
-    </p>
-
-    <p
-      text-main-content
-      text-center
-    >
-      {{ $t('description') }}
-    </p>
-
-    <input
-      v-model="qrData"
-      p-2
-      bg="#161618"
-      border="gray-500/50"
-      border-solid
-      hover:border-primary
-      focus:border-primary
-      my-transition
-      focus-visible:outline-none
-      rounded-md
-      color-white
-      type="text"
-      :placeholder="$t('placeholder')"
-    >
     <div
       rounded-md
       border-1
@@ -181,6 +186,7 @@ useHead({
       uppercase
       font-bold
       my-transition
+      text-xl
       :class="qrData ? 'cursor-pointer' : 'cursor-not-allowed !bg-gray-500/50'"
       :disabled="!qrData"
       @click="downloadQRCode"
