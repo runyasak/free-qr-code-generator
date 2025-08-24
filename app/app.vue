@@ -44,6 +44,7 @@ watch(qrData, (newVal) => {
   } else {
     qrCode.value?.update({
       data: exampleData,
+      image: '',
     })
 
     logoImageFileName.value = ''
