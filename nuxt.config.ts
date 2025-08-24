@@ -9,7 +9,8 @@ export default defineNuxtConfig({
       stylistic: {
         semi: false,
         quotes: 'single',
-        indent: 2
+        indent: 2,
+        braceStyle: '1tbs'
       }
     }
   },

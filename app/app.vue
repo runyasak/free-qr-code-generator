@@ -1,20 +1,30 @@
 <script setup lang="ts">
-import QRCodeStyling from 'qr-code-styling'
+import QrCodeStyling from 'qr-code-styling'
 
 const { t, locale } = useI18n()
 
+const logoImageInput = ref<HTMLInputElement | null>(null)
+
+const logoImageFileName = ref('')
+
 const qrData = ref('')
 
-const qrCode = ref<QRCodeStyling | null>(null)
+const qrCode = ref<QrCodeStyling | null>(null)
+
+const hasQrCode = computed(() => qrData.value.length > 0)
 
 const exampleData = 'https://example.com'
 
 onMounted(() => {
-  qrCode.value = new QRCodeStyling({
+  qrCode.value = new QrCodeStyling({
     width: 1000,
     height: 1000,
     type: 'svg',
     data: exampleData,
+    imageOptions: {
+      crossOrigin: 'anonymous',
+      margin: 10,
+    },
     dotsOptions: {
       type: 'extra-rounded',
     },
@@ -31,11 +41,14 @@ watch(qrData, (newVal) => {
     qrCode.value?.update({
       data: newVal,
     })
-  }
-  else {
+  } else {
     qrCode.value?.update({
       data: exampleData,
     })
+
+    logoImageFileName.value = ''
+
+    clearLogoImage()
   }
 })
 
@@ -43,6 +56,28 @@ function downloadQRCode() {
   qrCode.value?.download({
     name: 'qr-code',
   })
+}
+
+function handleLogoImageChange(event: Event) {
+  const file = (event.target as HTMLInputElement).files?.[0]
+
+  if (!file || !file.type.includes('image/')) {
+    return
+  }
+
+  logoImageFileName.value = file.name
+
+  qrCode.value?.update({
+    image: URL.createObjectURL(file),
+  })
+
+  clearLogoImage()
+}
+
+function clearLogoImage() {
+  if (logoImageInput.value) {
+    logoImageInput.value.value = ''
+  }
 }
 
 useHead({
@@ -118,7 +153,8 @@ useHead({
     <div class="text-center flex flex-col gap-2">
       <div
         text-white
-        text-5xl
+        text-4xl
+        md:text-5xl
       >
         {{ $t('title') }}
       </div>
@@ -126,7 +162,7 @@ useHead({
       <p
         text-main-content
         uppercase
-        text-xl
+        md:text-xl
       >
         {{ $t('subtitle') }}
       </p>
@@ -135,13 +171,14 @@ useHead({
     <div class="flex flex-col gap-2">
       <p
         text-main-content
-        text-xl
+        md:text-xl
       >
         {{ $t('description') }}
       </p>
       <input
         v-model="qrData"
-        p-2
+        px-3
+        py-2
         bg="#161618"
         border="gray-500/50"
         border-solid
@@ -151,10 +188,47 @@ useHead({
         focus-visible:outline-none
         rounded-md
         color-white
-        text-xl
+        md:text-xl
         type="text"
         :placeholder="$t('placeholder')"
       >
+
+      <button
+        bg-transparent
+        border-solid
+        px-3
+        py-2
+        rounded-md
+        relative
+        flex
+        items-center
+        gap-2
+        md:text-xl
+        my-transition
+        :disabled="!hasQrCode"
+        :class="
+          !hasQrCode
+            ? 'cursor-not-allowed text-gray-500 border-gray-500/50'
+            : 'cursor-pointer hover:border-primary text-white border-white hover:text-primary'"
+        @click="logoImageInput?.click()"
+      >
+        <svg
+          min-w="28px"
+          xmlns="http://www.w3.org/2000/svg"
+          width="28px"
+          height="28px"
+          viewBox="0 0 24 24"
+        ><path
+          fill="currentColor"
+          d="m9 13l3-4l3 4.5V12h4V5c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h8v-4H5l3-4z"
+        /><path
+          fill="currentColor"
+          d="M19 14h-2v3h-3v2h3v3h2v-3h3v-2h-3z"
+        /></svg>
+        <span line-clamp-1>
+          {{ logoImageFileName || $t('addLogoImage') }}
+        </span>
+      </button>
     </div>
 
     <div
@@ -180,12 +254,12 @@ useHead({
       bg-primary
       px-6
       py-4
-      rounded
+      rounded-md
       border-0
       uppercase
       font-bold
       my-transition
-      text-xl
+      md:text-xl
       :class="qrData ? 'cursor-pointer' : 'cursor-not-allowed !bg-gray-500/50'"
       :disabled="!qrData"
       @click="downloadQRCode"
@@ -193,4 +267,12 @@ useHead({
       {{ $t('downloadButton') }}
     </button>
   </div>
+
+  <input
+    ref="logoImageInput"
+    type="file"
+    accept="image/*"
+    hidden
+    @change="handleLogoImageChange"
+  >
 </template>
