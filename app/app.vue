@@ -148,18 +148,29 @@ useHead({
       focus:border-primary
       my-transition
       focus-visible:outline-none
-      rounded
+      rounded-md
       color-white
       type="text"
       :placeholder="$t('placeholder')"
     >
     <div
-      id="qr-code-canvas"
-      m-auto
+      rounded-md
+      border-1
+      border-solid
+      border-white
       flex-1
-      overflow-y-hidden
-      class="[&_svg]:h-full"
-    />
+      mx-auto
+      aspect-square
+      p-1
+      overflow-hidden
+    >
+      <div
+        id="qr-code-canvas"
+        overflow-y-hidden
+        rounded-md
+        class="[&_svg]:h-full"
+      />
+    </div>
 
     <button
       bg-primary
