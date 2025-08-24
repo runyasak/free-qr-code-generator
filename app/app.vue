@@ -131,7 +131,6 @@ useHead({
         {{ $t('subtitle') }}
       </p>
     </div>
-    
 
     <div class="flex flex-col gap-2">
       <p
