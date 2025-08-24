@@ -1,7 +1,7 @@
 {
   "title": "Free QR Code Generator",
   "subtitle": "Online QR Code Creation Tool",
-  "description": "Enter URL or text you want to encode",
+  "description": "Enter URL or text you want",
   "placeholder": "https://example.com",
   "downloadButton": "Download QR Code",
   "seo": {
