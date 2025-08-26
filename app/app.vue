@@ -172,7 +172,7 @@ useHead({
       gap-2
     >
       <p
-        text="main-content xl"
+        text="main-content xl center md:left"
       >
         {{ $t('description') }}
       </p>
