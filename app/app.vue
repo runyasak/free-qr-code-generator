@@ -118,14 +118,13 @@ useHead({
 
 <template>
   <a
-    class="text-[#98989f]"
     href="https://github.com/runyasak/free-qr-code-generator"
     target="_blank"
     rel="noopener noreferrer"
     absolute
     top-4
     right-4
-    hover:text="#dfdfd6"
+    text="[#98989f] hover:[#dfdfd6]"
     my-transition
   >
     <svg
@@ -152,51 +151,41 @@ useHead({
   >
     <div
       text-center
-      flex
-      flex-col
+      flex="~ col"
       gap-2
     >
       <div
-        text-white
-        text-4xl
-        md:text-5xl
+        text="white 4xl md:5xl"
       >
         {{ $t('title') }}
       </div>
 
       <p
-        text-main-content
         uppercase
-        md:text-xl
+        text="main-content xl"
       >
         {{ $t('subtitle') }}
       </p>
     </div>
     <div
-      flex
-      flex-col
+      flex="~ col"
       gap-2
     >
       <p
-        text-main-content
-        md:text-xl
+        text="main-content xl"
       >
         {{ $t('description') }}
       </p>
       <input
         v-model="qrData"
+        text="white xl"
         px-3
         py-2
         bg="#161618"
-        border="gray-500/50"
-        border-solid
-        hover:border-primary
-        focus:border-primary
+        border="gray-500/50 solid hover:primary focus:primary"
         my-transition
         focus-visible:outline-none
         rounded-md
-        color-white
-        md:text-xl
         type="text"
         :placeholder="$t('placeholder')"
       >
@@ -217,8 +206,7 @@ useHead({
           <button
             bg-transparent
             border-solid
-            px-3
-            py-2
+            p="x-3 y-2"
             rounded-md
             relative
             flex
@@ -253,12 +241,9 @@ useHead({
         </div>
       </div>
       <div
-        md:flex-1
-        md:mt-0
+        md="flex-1 mt-0"
         rounded-md
-        border-1
-        border-solid
-        border-white
+        border="1 solid white"
         mx-auto
         aspect-square
         p-1
@@ -275,8 +260,7 @@ useHead({
 
     <button
       bg-primary
-      px-6
-      py-4
+      p="x-6 y-4"
       rounded-md
       border-0
       uppercase
