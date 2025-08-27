@@ -178,14 +178,7 @@ useHead({
       </p>
       <input
         v-model="qrData"
-        text="white xl"
-        px-3
-        py-2
-        bg="#161618"
-        border="gray-500/50 solid hover:primary focus:primary"
-        my-transition
-        focus-visible:outline-none
-        rounded-md
+        base-input
         type="text"
         :placeholder="$t('placeholder')"
       >
@@ -259,15 +252,7 @@ useHead({
     </div>
 
     <button
-      bg-primary
-      p="x-6 y-4"
-      rounded-md
-      border-0
-      uppercase
-      font-bold
-      my-transition
-      md:text-xl
-      :class="qrData ? 'cursor-pointer' : 'cursor-not-allowed !bg-gray-500/50'"
+      base-button
       :disabled="!qrData"
       @click="downloadQRCode"
     >
