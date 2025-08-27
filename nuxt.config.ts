@@ -2,22 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts', '@nuxthub/core', 'nuxt-gtag', '@nuxtjs/i18n'],
-  css: ['~/assets/css/reset.css', '~/assets/css/main.css'],
-  eslint: {
-    config: {
-      stylistic: {
-        semi: false,
-        quotes: 'single',
-        indent: 2,
-        braceStyle: '1tbs'
-      }
-    }
-  },
-  fonts: {
-    families: [
-      { name: 'Kanit', provider: 'google' }
-    ]
+  extends: ['./layers/base'],
+  unocss: {
+    nuxtLayers: true
   },
   i18n: {
     locales: [
