@@ -41,9 +41,9 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'สร้าง QR Code ฟรี ออนไลน์ สร้าง QR Code สำหรับเว็บไซต์ ลิงก์ หรือข้อความได้ทันที ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รองรับภาษาไทย' },
-        { name: 'keywords', content: 'QR Code, สร้าง QR Code, QR Code ฟรี, เครื่องมือสร้าง QR Code, QR Code ออนไลน์, สร้าง QR Code สำหรับเว็บไซต์, QR Code ภาษาไทย' },
+        { name: 'keywords', content: 'QR Code, สร้าง QR Code, QR Code ฟรี, เครื่องมือสร้าง QR Code, QR Code ออนไลน์, สร้าง QR Code สำหรับเว็บไซต์, QR Code ภาษาไทย, Free QR Code Generator, QR Code Maker, QR Code Creator' },
         { name: 'author', content: 'Free QR Code Generator' },
-        { name: 'robots', content: 'index, follow' },
+        { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'language', content: 'th' },
         { name: 'geo.region', content: 'TH' },
         { name: 'geo.placename', content: 'Thailand' },
@@ -65,13 +65,17 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#000000' },
         { name: 'msapplication-TileColor', content: '#000000' },
         { name: 'apple-mobile-web-app-title', content: 'สร้าง QR Code ฟรี' },
-        { name: 'application-name', content: 'สร้าง QR Code ฟรี' }
+        { name: 'application-name', content: 'สร้าง QR Code ฟรี' },
+        
+        { name: 'referrer', content: 'strict-origin-when-cross-origin' },
+        { name: 'format-detection', content: 'telephone=no' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://free-qr-code-generator.nuxt.dev' }, // Replace with your actual domain
+        { rel: 'canonical', href: 'https://free-qr-code-generator.nuxt.dev' },
         { rel: 'alternate', hreflang: 'th', href: 'https://free-qr-code-generator.nuxt.dev' },
-      ],
+        { rel: 'alternate', hreflang: 'x-default', href: 'https://free-qr-code-generator.nuxt.dev' },
+      ]
     }
   },
   gtag: {
