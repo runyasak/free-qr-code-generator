@@ -5,7 +5,11 @@ const { t, locale } = useI18n()
 
 const logoImageInput = ref<HTMLInputElement | null>(null)
 
+const colorInput = ref<HTMLInputElement | null>(null)
+
 const logoImageFileName = ref('')
+
+const color = ref('')
 
 const qrData = ref('')
 
@@ -27,6 +31,7 @@ onMounted(() => {
     },
     dotsOptions: {
       type: 'extra-rounded',
+      color: '#1e1e1e',
     },
     cornersSquareOptions: {
       type: 'extra-rounded',
@@ -45,9 +50,13 @@ watch(qrData, (newVal) => {
     qrCode.value?.update({
       data: exampleData,
       image: '',
+      dotsOptions: {
+        color: '',
+      },
     })
 
     logoImageFileName.value = ''
+    color.value = ''
 
     clearLogoImage()
   }
@@ -73,6 +82,16 @@ function handleLogoImageChange(event: Event) {
   })
 
   clearLogoImage()
+}
+
+function handleColorChange(event: Event) {
+  color.value = (event.target as HTMLInputElement).value
+
+  qrCode.value?.update({
+    dotsOptions: {
+      color: color.value,
+    },
+  })
 }
 
 function clearLogoImage() {
@@ -140,8 +159,9 @@ useHead({
     </svg>
   </a>
   <div
-    h-screen
-    p-12
+    min-h-screen
+    px-12
+    py-8
     mx="auto"
     container
     max-w-3xl
@@ -207,11 +227,8 @@ useHead({
             gap-2
             md:text-xl
             my-transition
+            class="disabled:cursor-not-allowed disabled:text-gray-500 disabled:border-gray-500/50 not-disabled:cursor-pointer not-disabled:hover:border-primary not-disabled:text-white not-disabled:border-white not-disabled:hover:text-primary"
             :disabled="!hasQrCode"
-            :class="
-              !hasQrCode
-                ? 'cursor-not-allowed text-gray-500 border-gray-500/50'
-                : 'cursor-pointer hover:border-primary text-white border-white hover:text-primary'"
             @click="logoImageInput?.click()"
           >
             <svg
@@ -230,6 +247,46 @@ useHead({
             <span line-clamp-1>
               {{ logoImageFileName || $t('addLogoImage') }}
             </span>
+          </button>
+          <button
+            bg-transparent
+            border-solid
+            p="x-3 y-2"
+            rounded-md
+            relative
+            flex
+            items-center
+            gap-2
+            md:text-xl
+            my-transition
+            :disabled="!hasQrCode"
+            class="disabled:cursor-not-allowed disabled:text-gray-500 disabled:border-gray-500/50 not-disabled:cursor-pointer not-disabled:hover:border-primary not-disabled:text-white not-disabled:border-white not-disabled:hover:text-primary"
+          >
+            <svg
+              :style="{ color: color || 'currentcolor' }"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28px"
+              height="28px"
+              viewBox="0 0 2048 2048"
+            ><path
+              fill="currentcolor"
+              d="M1024 0q141 0 272 36t244 104t207 160t161 207t103 245t37 272q0 141-36 272t-104 244t-160 207t-207 161t-245 103t-272 37q-53 0-99-20t-82-55t-55-81t-20-100q0-53 13-103t42-96q6-11 11-17t12-16q25-39 37-71t13-81q0-53-20-99t-55-82t-81-55t-100-20q-48 0-80 12t-72 38q-10 7-16 12t-17 11q-45 28-95 41t-104 14q-53 0-99-20t-82-55t-55-81t-20-100q0-141 36-272t104-244t160-207t207-161T752 37t272-37m384 480q-33 0-62 12t-51 35t-34 51t-13 62q0 33 12 62t35 51t51 34t62 13q33 0 62-12t51-35t34-51t13-62q0-33-12-62t-35-51t-51-34t-62-13M512 928q33 0 62-12t51-35t34-51t13-62q0-33-12-62t-35-51t-51-34t-62-13q-33 0-62 12t-51 35t-34 51t-13 62q0 33 12 62t35 51t51 34t62 13m384-256q33 0 62-12t51-35t34-51t13-62q0-33-12-62t-35-51t-51-34t-62-13q-33 0-62 12t-51 35t-34 51t-13 62q0 33 12 62t35 51t51 34t62 13m384 1024q33 0 62-12t51-35t34-51t13-62q0-33-12-62t-35-51t-51-34t-62-13q-33 0-62 12t-51 35t-34 51t-13 62q0 33 12 62t35 51t51 34t62 13m256-384q33 0 62-12t51-35t34-51t13-62q0-33-12-62t-35-51t-51-34t-62-13q-33 0-62 12t-51 35t-34 51t-13 62q0 33 12 62t35 51t51 34t62 13"
+            /></svg>
+            <span :style="{ color: color || 'currentcolor' }">
+              {{ color.toUpperCase() || 'เปลี่ยนสี QR Code' }}
+            </span>
+            <input
+              ref="colorInput"
+              type="color"
+              absolute
+              z-1
+              w-full
+              h-full
+              left-0
+              opacity-0
+              cursor-pointer
+              @change="handleColorChange"
+            >
           </button>
         </div>
       </div>
