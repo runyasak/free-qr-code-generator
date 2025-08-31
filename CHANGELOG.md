@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.1.0
+
+[compare changes](https://github.com/runyasak/free-qr-code-generator/compare/v0.0.1...v0.1.0)
+
+### 🚀 Enhancements
+
+- Add color picker functionality to customize QR code color in app.vue ([e84c885](https://github.com/runyasak/free-qr-code-generator/commit/e84c885))
+
+### 🏡 Chore
+
+- Update CHANGELOG.md to include v0.0.1 release ([9a5fd48](https://github.com/runyasak/free-qr-code-generator/commit/9a5fd48))
+- Add @nuxthub/core module to nuxt.config.ts for enhanced functionality ([082fd33](https://github.com/runyasak/free-qr-code-generator/commit/082fd33))
+
+### ❤️ Contributors
+
+- Runyasak Chaengnaimuang ([@runyasak](https://github.com/runyasak))
+
 ## v0.0.1
 
 
