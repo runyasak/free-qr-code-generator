@@ -122,7 +122,7 @@ useHead({
         'offers': {
           '@type': 'Offer',
           'price': '0',
-          'priceCurrency': locale.value === 'th' ? 'THB' : 'USD',
+          'priceCurrency': locale.value === 'th' ? 'THB' : locale.value === 'zh' ? 'CNY' : 'USD',
         },
         'inLanguage': locale.value,
         'author': {

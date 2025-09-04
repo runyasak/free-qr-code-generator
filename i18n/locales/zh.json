@@ -1,0 +1,13 @@
+{
+  "title": "免费二维码生成器",
+  "subtitle": "在线二维码创建工具",
+  "description": "输入您想要编码的URL或文本",
+  "placeholder": "https://example.com",
+  "downloadButton": "下载二维码",
+  "addLogoImage": "添加标志",
+  "changeColor": "更改颜色",
+  "seo": {
+    "title": "免费二维码生成器 - 在线二维码创建工具",
+    "description": "免费在线生成二维码。为网站、链接或文本即时创建二维码。无需安装程序，使用简单，支持中文。"
+  }
+}

@@ -20,6 +20,12 @@ export default defineNuxtConfig({
         iso: 'en-US',
         name: 'English',
         file: 'en.json'
+      },
+      {
+        code: 'zh',
+        iso: 'zh-CN',
+        name: '中文',
+        file: 'zh.json'
       }
     ],
     defaultLocale: 'th',
