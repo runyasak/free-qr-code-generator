@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.2.0
+
+[compare changes](https://github.com/runyasak/free-qr-code-generator/compare/v0.1.0...v0.2.0)
+
+### 🚀 Enhancements
+
+- Add localization for Change Color in English and Thai languages in i18n files ([31e0f17](https://github.com/runyasak/free-qr-code-generator/commit/31e0f17))
+- Add Chinese localization support ([07c30df](https://github.com/runyasak/free-qr-code-generator/commit/07c30df))
+
+### ❤️ Contributors
+
+- Runyasak Chaengnaimuang ([@runyasak](https://github.com/runyasak))
+
 ## v0.1.0
 
 [compare changes](https://github.com/runyasak/free-qr-code-generator/compare/v0.0.1...v0.1.0)
