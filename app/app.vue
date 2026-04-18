@@ -19,6 +19,12 @@ const hasQrCode = computed(() => qrData.value.length > 0)
 
 const exampleData = 'https://example.com'
 
+function toUtf8ByteString(text: string): string {
+  return Array.from(new TextEncoder().encode(text))
+    .map(b => String.fromCharCode(b))
+    .join('')
+}
+
 onMounted(() => {
   qrCode.value = new QrCodeStyling({
     width: 1000,
@@ -44,7 +50,7 @@ onMounted(() => {
 watch(qrData, (newVal) => {
   if (newVal) {
     qrCode.value?.update({
-      data: newVal,
+      data: toUtf8ByteString(newVal),
     })
   } else {
     qrCode.value?.update({
