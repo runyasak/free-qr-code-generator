@@ -4,7 +4,7 @@ const { resolve } = createResolver(import.meta.url);
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts', '@nuxthub/core', 'nuxt-gtag', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@unocss/nuxt', '@nuxt/fonts', 'nuxt-gtag', '@nuxtjs/i18n'],
   css: [resolve('app/assets/css/reset.css'), resolve('app/assets/css/main.css')],
   eslint: {
     config: {

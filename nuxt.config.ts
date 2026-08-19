@@ -1,9 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2026-08-19",
   devtools: { enabled: true },
   extends: ['./layers/base'],
-  modules: ['@nuxthub/core'],
   unocss: {
     nuxtLayers: true
   },
@@ -87,5 +86,12 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-K59VFKK8CG'
+  },
+  nitro: {
+    prerender: {
+      // No in-app language switcher for the crawler to follow, so list the
+      // non-default i18n routes explicitly or `nuxt generate` only emits `/`.
+      routes: ['/en', '/zh']
+    }
   }
 })
