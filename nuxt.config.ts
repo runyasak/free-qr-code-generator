@@ -30,13 +30,7 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'th',
     strategy: 'prefix_except_default',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      alwaysRedirect: true,
-      fallbackLocale: 'th'
-    },
+    detectBrowserLanguage: false,
   },
   app: {
     head: {
